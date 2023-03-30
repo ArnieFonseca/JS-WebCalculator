@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Callback Demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <style>
+        img {
+            position: relative;
+            top: 10px;
+            width: 32px;
+            height: 32px;
+        }
+    </style>
+
+</head>
+
+<body class="bg-secondary bg-opacity-10">
+
+    <div class="container">
+        <header>
+            <div>
+                <h1 class="mt-5">JavaScript Callbacks</h1>
+
+                <h6>Calculation Asynchronized.</h6>
+
+            </div>
+        </header>
+
+        <main>
+            <p id="result" class="fst-italic mt-5">Press button to calculate the addition</p>
+
+            <table class="table">
+                <tr>
+                    <td><label> First:</label></td>
+                    <td><input id="first" type="text" class="form-control w-25 text-primary" maxlength="5"
+                            placeholder="Enter a number" /></td>
+                </tr>
+                <tr>
+                    <td class="literals"><label>Second:</label></td>
+                    <td><input id="second" type="text" class="form-control w-25 text-primary" maxlength="5"
+                            placeholder="Enter a number" /></td>
+                </tr>
+            </table>
+
+            <!-- Dropdown option for the calculation -->
+            <select id="cboOperation" class="form-select form-select-sm w-25 float-start text-primary">
+                <option value="add"  op="diadic">Addition</option>
+                <option value="mul"  op="diadic">Multiplication</option>
+                <option value="sub"  op="diadic">Subtraction</option>
+                <option value="div"  op="diadic">Division</option>
+                <option value="mod"  op="diadic">Modulo</option>
+                <option value="sqrt" op="monadic">Square Root</option>
+            </select>
+
+            <!-- Button and image for the asynchronized call -->
+            <button id="btn" class="btn btn-outline-primary btn-sm mx-sm-1">Calculate</button>
+            <img id="imgLoader" src="Images/circles-menu-1.gif">
+
+        </main>
+    </div>
+    <footer>
+
+        <hr>
+        <h6 class="mx-2">JavaScript Calculator</h6>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+            crossorigin="anonymous"></script>
+        <script src='Scripts/callback-constant.js'></script>
+        <script src='Scripts/callback.js'></script>
+
+    </footer>
+
+</body>
+
+</html>
