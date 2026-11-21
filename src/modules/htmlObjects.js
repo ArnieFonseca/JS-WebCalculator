@@ -1,0 +1,14 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.cboOperation = exports.txSecond = exports.txFirst = exports.spResult = exports.btnCalc = void 0;
+var constants_js_1 = require("./constants.js");
+var btnCalc = document.getElementById(constants_js_1.Constants.HtmlFields.BTN_CALC);
+exports.btnCalc = btnCalc;
+var spResult = document.getElementById(constants_js_1.Constants.HtmlFields.SP_RESULT);
+exports.spResult = spResult;
+var txFirst = document.getElementById(constants_js_1.Constants.HtmlFields.TX_FIRST);
+exports.txFirst = txFirst;
+var txSecond = document.getElementById(constants_js_1.Constants.HtmlFields.TX_SECOND);
+exports.txSecond = txSecond;
+var cboOperation = document.getElementById(constants_js_1.Constants.HtmlFields.CBO_OPERATION);
+exports.cboOperation = cboOperation;

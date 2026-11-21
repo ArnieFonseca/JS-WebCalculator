@@ -1,78 +1,51 @@
-<!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>Callback Demo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-
-    <style>
-        img {
-            position: relative;
-            top: 10px;
-            width: 32px;
-            height: 32px;
-        }
-    </style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="src/styles/global.css" />
 </head>
 
-<body class="bg-secondary bg-opacity-10">
+<body>
+    <main>
+        <div style="margin: 1rem;">
 
-    <div class="container">
-        <header>
-            <div>
-                <h1 class="mt-5">JavaScript Callbacks</h1>
-
-                <h6>Calculation Asynchronized.</h6>
-
-            </div>
-        </header>
-
-        <main>
-            <p id="result" class="fst-italic mt-5">Press button to calculate the addition</p>
-
-            <table class="table">
+            <h1>TypeScript Calculator </h1>
+            <table>
                 <tr>
-                    <td><label> First:</label></td>
-                    <td><input id="first" type="text" class="form-control w-25 text-primary" maxlength="5"
-                            placeholder="Enter a number" /></td>
+                    <td><label for="txFirst">First Number</label></td>
+                    <td><input type="text" id="txFirst" class="bg-input"  title="First Number"/></td>
                 </tr>
                 <tr>
-                    <td class="literals"><label>Second:</label></td>
-                    <td><input id="second" type="text" class="form-control w-25 text-primary" maxlength="5"
-                            placeholder="Enter a number" /></td>
+                    <td><label for="txSecond">Second Number</label></td>
+                    <td><input type="text" id="txSecond" class="bg-input" title="Second Number"/></td>
+                </tr>
+                <tr>
+                    <td><label for="cboOperation">Operation</label></td>
+                    <td><select id="cboOperation" class="bg-input">
+                        </select></td>
                 </tr>
             </table>
 
-            <!-- Dropdown option for the calculation -->
-            <select id="cboOperation" class="form-select form-select-sm w-25 float-start text-primary">
-                <option value="add"  op="diadic">Addition</option>
-                <option value="mul"  op="diadic">Multiplication</option>
-                <option value="sub"  op="diadic">Subtraction</option>
-                <option value="div"  op="diadic">Division</option>
-                <option value="mod"  op="diadic">Modulo</option>
-                <option value="sqrt" op="monadic">Square Root</option>
-            </select>
+            <div style="margin-top: 1rem;">
+                <button id="btnCalc" type="button" class="bg-button">Calculate</button>
+                <img id="imgWait"                
+                src="src/images/ajax-loader.gif"
+                style="width: 1.1rem; height: 1.1rem;"/>
+            </div>
 
-            <!-- Button and image for the asynchronized call -->
-            <button id="btn" class="btn btn-outline-primary btn-sm mx-sm-1">Calculate</button>
-            <img id="imgLoader" src="Images/circles-menu-1.gif">
+            <div style="margin-top: 1.5rem;">
+                <span id="spResult"></span>
+                
+            </div>
+        </div>
+    </main>
 
-        </main>
-    </div>
-    <footer>
-
-        <hr>
-        <h6 class="mx-2">JavaScript Calculator</h6>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
-            crossorigin="anonymous"></script>
-        <script src='Scripts/callback-constant.js'></script>
-        <script src='Scripts/callback.js'></script>
-
-    </footer>
-
+    <!-- Loading scripts... -->
+    <script type="module" src="dist/modules/constants.js"></script>
+    <script type="module" src="dist/modules/htmlObjects.js"></script>
+    <script type="module" src="dist/callback.js"></script>
 </body>
 
 </html>
