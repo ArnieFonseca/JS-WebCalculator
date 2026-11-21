@@ -6,10 +6,6 @@ export interface OperationOption {
     operation: string
     description: string
 }
- 
-export interface ResultOperations {
-    result: OperationOption[]
-}
 
 export interface ResultData {
     result: number

@@ -1,6 +1,6 @@
 import { btnCalc, spResult, txFirst, txSecond, cboOperation, imgWait } from './modules/htmlObjects.js'
 import { Constants } from './modules/constants.js'
-import type { ResultOperations, OperationOption, LoadComboBox, CallServerForOperation, CallServerForDropdown, ResultData } from './types/types.js'
+import type { OperationOption, LoadComboBox, CallServerForOperation, CallServerForDropdown, ResultData } from './types/types.js'
 
 /**
  * Keydown Event Handler
@@ -100,9 +100,9 @@ const loadComboBox: LoadComboBox = (options): void => {
 const calcOnServer: CallServerForOperation = (operation, first, second, callback): void => {
 
     const url = `${Constants.Server.BASE_URL}/${operation}/${first}/${second}`
- 
+
     imgWait.style.display = Constants.String.EMPTY
-    
+
     fetch(url)
         .then(response => response.json())
         .then((data: ResultData) => {
@@ -112,9 +112,14 @@ const calcOnServer: CallServerForOperation = (operation, first, second, callback
             console.error(Constants.ErrorMessages.ERROR_FETCHING_DATA, error)
             spResult.textContent = Constants.ErrorMessages.ERROR_FETCHING_DATA
         })
-        .finally( () => imgWait.style.display = Constants.String.NONE)
+        .finally(() => imgWait.style.display = Constants.String.NONE)
 }
 
+interface ResultOptionData {
+    operation: string,
+    description: string
+
+}
 /**
  * Call the server for the dropdown options
  * @param url string representing the URL to call
@@ -126,9 +131,8 @@ const initializeDropdown: CallServerForDropdown = (url, callback): void => {
 
     fetch(url)
         .then(response => response.json())
-        .then((data) => {
-            console.log(data)
-            callback(data)
+        .then((data:OperationOption[]) => {
+                callback(data)
         })
         .catch(error => {
             console.error(Constants.ErrorMessages.ERROR_FETCHING_DATA, error)
